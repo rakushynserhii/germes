@@ -12,5 +12,10 @@ pipeline {
         sh 'echo \'integration tests\''
       }
     }
+    stage('UI_test') {
+      steps {
+        build(propagate: true, wait: true, job: 'Smoke_UI_test')
+      }
+    }
   }
 }
