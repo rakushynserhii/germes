@@ -7,5 +7,10 @@ pipeline {
 '''
       }
     }
+    stage('integration') {
+      steps {
+        sh 'echo \'integration tests\''
+      }
+    }
   }
 }
