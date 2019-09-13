@@ -18,7 +18,7 @@ pipeline {
 
     stage('UI tests') {
       steps {
-        build(job: 'Smoke_UI_Test', propagate: true, wait: true)
+        build(job: 'UI_Testing', propagate: true, wait: true)
       }
     }
   }
