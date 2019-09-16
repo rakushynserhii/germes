@@ -11,6 +11,15 @@ pipeline {
     stage('UI tests') {
       steps {
         build(job: 'UI_Testing', propagate: true, wait: true)
+        script {
+                    allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'target/allure-results']]
+                    ])
+            }
       }
     }
   }
